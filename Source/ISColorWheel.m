@@ -1,5 +1,7 @@
 /*
- Copyright (c) 2012 Inline Studios
+ By: Justin Meiners
+ 
+ Copyright (c) 2013 Inline Studios
  Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
  */
 
@@ -13,13 +15,13 @@ typedef struct
     
 } PixelRGB;
 
-float ISColorWheel_PointDistance (CGPoint p1, CGPoint p2)
+static float ISColorWheel_PointDistance (CGPoint p1, CGPoint p2)
 {
     return sqrtf((p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y));
 }
 
 
-PixelRGB ISColorWheel_HSBToRGB (float h, float s, float v)
+static PixelRGB ISColorWheel_HSBToRGB (float h, float s, float v)
 {
     h *= 6.0f;
     int i = floorf(h);
@@ -122,6 +124,7 @@ PixelRGB ISColorWheel_HSBToRGB (float h, float s, float v)
 @synthesize knobView = _knobView;
 @synthesize knobSize = _knob;
 @synthesize brightness = _brightness;
+@synthesize continuous = _continuous;
 @synthesize delegate = _delegate;
 
 - (id)initWithFrame:(CGRect)frame
