@@ -11,5 +11,5 @@ Included is single standalone class and example project.
 
 This project is now available through [cocoapods](http://cocoapods.org) under "iOS-color-wheel".
 
-![sample_image](https://raw.github.com/narpas/image-sequence-streaming/master/screenshot.png)
+![sample_image](https://raw.github.com/narpas/iOS-color-wheel/master/screenshot.png)
 
