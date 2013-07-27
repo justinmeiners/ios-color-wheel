@@ -8,21 +8,22 @@
 #import "AppDelegate.h"
 
 @implementation AppDelegate
+@synthesize window = _window;
 
 - (void)dealloc
 {
-    [_window release];
+    self.window = NULL;
     [super dealloc];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
 
-    _mainViewController = [[MainViewController alloc] init];
-    _mainViewController.view.frame = _window.bounds;
-    _window.rootViewController = _mainViewController;
-    [_window addSubview:_mainViewController.view];
+    MainViewController* vc = [[MainViewController alloc] init];
+    self.window.rootViewController = vc;
+    [vc release];
+    
     [_window makeKeyAndVisible];
     return YES;
 }
