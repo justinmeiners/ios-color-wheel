@@ -6,6 +6,7 @@
  */
 
 #import "ISColorWheel.h"
+#import "NSString+SelectorName.h"
 
 typedef struct
 {
@@ -360,14 +361,24 @@ static PixelRGB ISColorWheel_HSBToRGB (float h, float s, float v)
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    NSString *currentColorKeyPath = [NSString stringWithNameOfSelector:@selector(currentColor)];
+    [self willChangeValueForKey:currentColorKeyPath];
+    
     [self setTouchPoint:[[touches anyObject] locationInView:self]];
+    
+    [self didChangeValueForKey:currentColorKeyPath];
     
     [_delegate colorWheelDidChangeColor:self];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    NSString *currentColorKeyPath = [NSString stringWithNameOfSelector:@selector(currentColor)];
+    [self willChangeValueForKey:currentColorKeyPath];
+    
     [self setTouchPoint:[[touches anyObject] locationInView:self]];
+    
+    [self didChangeValueForKey:currentColorKeyPath];
     
     if (_continuous)
     {
