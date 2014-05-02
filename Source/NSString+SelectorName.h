@@ -1,9 +1,9 @@
 //
 //  NSString+SelectorName.h
-//  ColorWheel
 //
 //  Created by Darrel Wright on 5/2/14.
-//  Copyright (c) 2014 Inline Studios. All rights reserved.
+//  Copyright (c) 2014 Darrel Wright.
+//  Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
 //
 
 #import <Foundation/Foundation.h>
