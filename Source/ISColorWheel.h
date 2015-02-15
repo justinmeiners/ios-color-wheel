@@ -21,7 +21,7 @@
 @property(nonatomic, assign)CGSize knobSize;
 @property(nonatomic, assign)float brightness;
 @property(nonatomic, assign)BOOL continuous;
-@property(nonatomic, assign)id <ISColorWheelDelegate> delegate;
+@property(nonatomic, assign) IBOutlet id <ISColorWheelDelegate> delegate;
 
 - (void)updateImage;
 
