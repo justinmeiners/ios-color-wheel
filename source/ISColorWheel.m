@@ -128,7 +128,6 @@ static ISColorWheelPixelRGB ISColorWheel_HSBToRGB (CGFloat h, CGFloat s, CGFloat
 
 @implementation ISColorWheel
 
-
 - (id)initWithFrame:(CGRect)frame
 {
     if ((self = [super initWithFrame:frame]))
@@ -302,7 +301,6 @@ static ISColorWheelPixelRGB ISColorWheel_HSBToRGB (CGFloat h, CGFloat s, CGFloat
     CGPoint point;
     point.x = center.x + (cosf(angle) * dist);
     point.y = center.y + (sinf(angle) * dist);
-    
     
     [self setTouchPoint: point];
     [self updateImage];
