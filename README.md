@@ -5,7 +5,7 @@ ios-color-wheel
 
 A fully scalable and dynamically rendered color picker for iOS.
 
-Many other iOS "color pickers" work by sampling colors from a pre-rendered image of a color wheel. This approach limits the color picker to the size and quality of the static image.
+Many other iOS color pickers work by sampling colors from a pre-rendered image of a color wheel. This approach limits the color picker to the size and quality of the static image.
 This project contains a color wheel that computes color values mathematically, and renders dynamically, giving a completely scalable UIView and more accurate color selection.
 
 ### Techincal ###
