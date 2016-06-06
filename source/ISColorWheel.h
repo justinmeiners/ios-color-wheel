@@ -25,12 +25,12 @@ typedef struct
 
 @interface ISColorWheel : UIView
 
-@property(nonatomic, weak)id <ISColorWheelDelegate> delegate;
+
+@property(nonatomic, weak) IBOutlet id <ISColorWheelDelegate> delegate;
 @property(nonatomic, assign)CGSize knobSize;
 @property(nonatomic, strong)UIView* knobView;
 @property(nonatomic, assign)CGFloat brightness;
 @property(nonatomic, assign)BOOL continuous;
-
 @property(nonatomic, strong)UIColor* borderColor;
 @property(nonatomic, assign)CGFloat borderWidth;
 @property(nonatomic, strong)UIColor* currentColor;
