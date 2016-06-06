@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		99419ED8191431D4001C7EAA /* NSString+SelectorName.m in Sources */ = {isa = PBXBuildFile; fileRef = 99419ED7191431D4001C7EAA /* NSString+SelectorName.m */; };
 		F47929A515D6D2B600B71086 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F47929A415D6D2B600B71086 /* UIKit.framework */; };
 		F47929A715D6D2B600B71086 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F47929A615D6D2B600B71086 /* Foundation.framework */; };
 		F47929A915D6D2B600B71086 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F47929A815D6D2B600B71086 /* CoreGraphics.framework */; };
@@ -19,8 +18,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		99419ED6191431D4001C7EAA /* NSString+SelectorName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SelectorName.h"; sourceTree = "<group>"; };
-		99419ED7191431D4001C7EAA /* NSString+SelectorName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SelectorName.m"; sourceTree = "<group>"; };
 		F47929A015D6D2B600B71086 /* ColorWheel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorWheel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F47929A415D6D2B600B71086 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F47929A615D6D2B600B71086 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -108,8 +105,6 @@
 			children = (
 				F47929C815D6D3A700B71086 /* ISColorWheel.h */,
 				F47929C915D6D3A700B71086 /* ISColorWheel.m */,
-				99419ED6191431D4001C7EAA /* NSString+SelectorName.h */,
-				99419ED7191431D4001C7EAA /* NSString+SelectorName.m */,
 			);
 			name = Source;
 			path = ../Source;
@@ -180,7 +175,6 @@
 				F47929B515D6D2B600B71086 /* AppDelegate.m in Sources */,
 				F47929C115D6D31E00B71086 /* MainViewController.m in Sources */,
 				F47929CA15D6D3A700B71086 /* ISColorWheel.m in Sources */,
-				99419ED8191431D4001C7EAA /* NSString+SelectorName.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
