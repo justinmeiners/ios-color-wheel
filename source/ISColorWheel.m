@@ -128,10 +128,7 @@ static ISColorWheelPixelRGB ISColorWheel_HSBToRGB (CGFloat h, CGFloat s, CGFloat
 
 @implementation ISColorWheel
 
-- (id)initWithFrame:(CGRect)frame
-{
-    if ((self = [super initWithFrame:frame]))
-    {
+- (void)doInit {
         _radialImage = nil;
         _imageData = nil;
         
@@ -150,8 +147,20 @@ static ISColorWheelPixelRGB ISColorWheel_HSBToRGB (CGFloat h, CGFloat s, CGFloat
         self.knobView = [[ISColorKnobView alloc] init];
 
         _continuous = false;
+}
+
+- (id)initWithFrame:(CGRect)frame
+{
+    if ((self = [super initWithFrame:frame]))
+    {
+        [self doInit];
     }
     return self;
+}
+
+- (void) awakeFromNib {
+    [super awakeFromNib];
+    [self doInit];
 }
 
 - (void)dealloc
