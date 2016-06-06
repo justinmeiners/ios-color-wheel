@@ -112,7 +112,7 @@ static ISColorWheelPixelRGB ISColorWheel_HSBToRGB (CGFloat h, CGFloat s, CGFloat
     CGImageRef _radialImage;
     ISColorWheelPixelRGB* _imageData;
     int _imageDataLength;
-    float _radius;
+    CGFloat _radius;
     CGPoint _touchPoint;
 }
 
@@ -128,25 +128,26 @@ static ISColorWheelPixelRGB ISColorWheel_HSBToRGB (CGFloat h, CGFloat s, CGFloat
 
 @implementation ISColorWheel
 
-- (void)doInit {
-        _radialImage = nil;
-        _imageData = nil;
-        
-        _imageDataLength = 0;
-        
-        _brightness = 1.0;
-        _knobSize = CGSizeMake(28, 28);
-        
-        _touchPoint = CGPointMake(self.bounds.size.width / 2.0, self.bounds.size.height / 2.0);
-        
-        
-        self.borderColor = [UIColor blackColor];
-        self.borderWidth = 3.0;
-        
-        self.backgroundColor = [UIColor clearColor];
-        self.knobView = [[ISColorKnobView alloc] init];
-
-        _continuous = false;
+- (void)doInit
+{
+    _radialImage = nil;
+    _imageData = nil;
+    
+    _imageDataLength = 0;
+    
+    _brightness = 1.0;
+    _knobSize = CGSizeMake(28, 28);
+    
+    _touchPoint = CGPointMake(self.bounds.size.width / 2.0, self.bounds.size.height / 2.0);
+    
+    
+    self.borderColor = [UIColor blackColor];
+    self.borderWidth = 3.0;
+    
+    self.backgroundColor = [UIColor clearColor];
+    self.knobView = [[ISColorKnobView alloc] init];
+    
+    _continuous = false;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -202,8 +203,8 @@ static ISColorWheelPixelRGB ISColorWheel_HSBToRGB (CGFloat h, CGFloat s, CGFloat
 
 - (CGPoint)viewToImageSpace:(CGPoint)point
 {
-    float width = self.bounds.size.width;
-    float height = self.bounds.size.height;
+    CGFloat width = self.bounds.size.width;
+    CGFloat height = self.bounds.size.height;
     
     point.y = height - point.y;
     
@@ -254,9 +255,9 @@ static ISColorWheelPixelRGB ISColorWheel_HSBToRGB (CGFloat h, CGFloat s, CGFloat
         _imageDataLength = dataLength;
     }
     
-    for (int y = 0; y < height; y++)
+    for (int y = 0; y < height; ++y)
     {
-        for (int x = 0; x < width; x++)
+        for (int x = 0; x < width; ++x)
         {
             _imageData[x + y * width] = [self colorAtPoint:CGPointMake(x, y)];
         }
@@ -304,8 +305,8 @@ static ISColorWheelPixelRGB ISColorWheel_HSBToRGB (CGFloat h, CGFloat s, CGFloat
     
     CGPoint center = CGPointMake(_radius, _radius);
     
-    float angle = (h * (M_PI * 2.0)) + M_PI / 2;
-    float dist = s * _radius;
+    CGFloat angle = (h * (M_PI * 2.0)) + M_PI / 2;
+    CGFloat dist = s * _radius;
     
     CGPoint point;
     point.x = center.x + (cosf(angle) * dist);
@@ -440,7 +441,7 @@ static ISColorWheelPixelRGB ISColorWheel_HSBToRGB (CGFloat h, CGFloat s, CGFloat
         // If so we need to create a drection vector and calculate the constrained point
         CGPoint vec = CGPointMake(point.x - center.x, point.y - center.y);
         
-        float extents = sqrtf((vec.x * vec.x) + (vec.y * vec.y));
+        CGFloat extents = sqrtf((vec.x * vec.x) + (vec.y * vec.y));
         
         vec.x /= extents;
         vec.y /= extents;

@@ -23,7 +23,7 @@ typedef struct
 @end
 
 
-@interface ISColorWheel : UIView
+@interface ISColorWheel : UIControl
 
 
 @property(nonatomic, weak) IBOutlet id <ISColorWheelDelegate> delegate;
