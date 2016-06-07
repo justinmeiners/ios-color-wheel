@@ -1,15 +1,16 @@
 /*
  By: Justin Meiners
  
- Copyright (c) 2013 Inline Studios
+ Copyright (c) 2015 Justin Meiners
  Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
  */
 
 #import <UIKit/UIKit.h>
-#import "MainViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property(nonatomic, retain)UIWindow* window;
+@property (strong, nonatomic) UIWindow *window;
+
 
 @end
+

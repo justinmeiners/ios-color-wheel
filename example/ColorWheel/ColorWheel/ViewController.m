@@ -1,18 +1,27 @@
 /*
  By: Justin Meiners
  
- Copyright (c) 2013 Inline Studios
+ Copyright (c) 2015 Justin Meiners
  Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
  */
 
-#import "MainViewController.h"
-#import <QuartzCore/QuartzCore.h>
+#import "ViewController.h"
+#import "ISColorWheel.h"
 
-@implementation MainViewController
-
-- (void)viewDidLoad
+@interface ViewController () <ISColorWheelDelegate>
 {
+    ISColorWheel* _colorWheel;
+    UISlider* _brightnessSlider;
+    UIView* _wellView;
+}
+
+@end
+
+@implementation ViewController
+
+- (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.view.backgroundColor = [UIColor whiteColor];
     
     CGSize size = self.view.bounds.size;
@@ -44,14 +53,15 @@
                                                          size.height * .1)];
     
     _wellView.layer.borderColor = [UIColor blackColor].CGColor;
-    _wellView.layer.borderWidth = 1.0;
+    _wellView.layer.borderWidth = 2.0;
     [self.view addSubview:_wellView];
 }
+
+
 
 - (void)changeBrightness:(UISlider*)sender
 {
     [_colorWheel setBrightness:_brightnessSlider.value];
-    [_colorWheel updateImage];
     [_wellView setBackgroundColor:_colorWheel.currentColor];
 }
 
@@ -60,5 +70,11 @@
     [_wellView setBackgroundColor:_colorWheel.currentColor];
 }
 
+    // Do any additional setup after loading the view, typically from a nib.
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 @end
