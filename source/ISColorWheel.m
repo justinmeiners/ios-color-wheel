@@ -391,6 +391,8 @@ static ISColorWheelPixelRGB ISColorWheel_HSBToRGB (CGFloat h, CGFloat s, CGFloat
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    [self willChangeValueForKey:@"currentColor"];
+    
     [self setTouchPoint:[[touches anyObject] locationInView:self]];
     
     if ([_knobView respondsToSelector:@selector(setFillColor:)])
@@ -398,12 +400,16 @@ static ISColorWheelPixelRGB ISColorWheel_HSBToRGB (CGFloat h, CGFloat s, CGFloat
         [_knobView performSelector:@selector(setFillColor:) withObject:self.currentColor afterDelay:0.0f];
         [_knobView setNeedsDisplay];
     }
+    
+    [self didChangeValueForKey:@"currentColor"];
     
     [_delegate colorWheelDidChangeColor:self];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    [self willChangeValueForKey:@"currentColor"];
+    
     [self setTouchPoint:[[touches anyObject] locationInView:self]];
     
     if ([_knobView respondsToSelector:@selector(setFillColor:)])
@@ -411,6 +417,8 @@ static ISColorWheelPixelRGB ISColorWheel_HSBToRGB (CGFloat h, CGFloat s, CGFloat
         [_knobView performSelector:@selector(setFillColor:) withObject:self.currentColor afterDelay:0.0f];
         [_knobView setNeedsDisplay];
     }
+    
+    [self didChangeValueForKey:@"currentColor"];
     
     if (_continuous)
     {
