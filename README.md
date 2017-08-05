@@ -17,4 +17,4 @@ Color wheels visualize and define colors from hue, saturation, and brightness co
   - Example project
 
 
-![sample_image](https://raw.github.com/narpas/iOS-color-wheel/master/screenshots/main.png)
+![sample image](screenshots/main.png)
